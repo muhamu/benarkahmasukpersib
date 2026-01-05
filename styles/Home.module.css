@@ -3,9 +3,11 @@
 ========================= */
 .container {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   margin: 0;
-  padding: 0;
   background:
     linear-gradient(
       110deg,
@@ -14,9 +16,17 @@
       rgba(0,0,0,0.25) 100%
     ),
     url("/persib-stadium.jpg") center / cover no-repeat;
+
   color: #ffffff;
-  position: relative;
   font-family: var(--font-bebas), sans-serif;
+}
+
+/* =========================
+   CONTENT WRAPPER
+========================= */
+.content {
+  flex: 1;                 /* 🔥 KUNCI FOOTER */
+  padding-bottom: 80px;
 }
 
 /* =========================
@@ -28,7 +38,7 @@
 }
 
 .titleSection h1 {
-  font-size: 72px;          /* JUDUL UTAMA */
+  font-size: 72px;
   letter-spacing: 4px;
   line-height: 1.15;
   font-weight: 400;
@@ -94,8 +104,6 @@
 }
 
 .table td {
-  font-size: 17px;
-  letter-spacing: 1px;
   border-top: 1px solid rgba(255,255,255,0.15);
 }
 
@@ -111,31 +119,37 @@
 }
 
 /* =========================
-   RANK TYPOGRAPHY HIERARCHY
+   RANK TYPOGRAPHY
 ========================= */
+.playerName {
+  text-transform: uppercase;
+}
 
-/* Default (Rank 3+) */
+.metric {
+  font-weight: 400;
+}
+
+/* Rank 3+ */
 .rankNormal .playerName,
 .rankNormal .metric {
   font-size: 17px;
   letter-spacing: 1px;
 }
 
-/* Rank #2 */
+/* Rank 2 */
 .rankSecond .playerName,
 .rankSecond .metric {
-  font-size: 32px;          /* ⬅️ REQUEST */
+  font-size: 32px;
   letter-spacing: 1.5px;
 }
 
-/* Rank #1 */
+/* Rank 1 */
 .rankTop .playerName,
 .rankTop .metric {
-  font-size: 38px;          /* ⬅️ REQUEST */
+  font-size: 38px;
   letter-spacing: 2px;
 }
 
-/* Visual emphasis Rank #1 */
 .rankTop {
   background: rgba(255,255,255,0.06);
 }
@@ -144,13 +158,10 @@
    FOOTER
 ========================= */
 .footer {
-  position: absolute;
-  bottom: 24px;
-  left: 32px;
-  font-size: 16px;
+  padding: 40px 32px;
+  font-size: 14px;
   letter-spacing: 2px;
-  font-weight: 400;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 /* =========================
@@ -175,7 +186,6 @@
     width: 95%;
   }
 
-  /* Rank scaling mobile */
   .rankTop .playerName,
   .rankTop .metric {
     font-size: 24px;
@@ -193,9 +203,5 @@
 
   .table th {
     font-size: 15px;
-  }
-
-  .table td {
-    font-size: 14px;
   }
 }
