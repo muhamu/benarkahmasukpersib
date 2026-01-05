@@ -43,7 +43,7 @@ export default function Home({ players }) {
             <tr>
               <th>#</th>
               <th>Nama</th>
-              <th>Confidence (%)</th>
+              <th>Kebenaran rumor (%)</th>
               <th>Sentiment Score</th>
             </tr>
           </thead>
@@ -72,7 +72,7 @@ export default function Home({ players }) {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className={styles.footer}>© MUHAMU 2026, Pemilik Gambar: Persib.co.id</footer>
+      <footer className={styles.footer}>Gambar: Persib.co.id</footer>
     </main>
   );
 }
