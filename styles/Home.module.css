@@ -1,141 +1,201 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
-}
-
-.main {
-  display: flex;
+/* =========================
+   CONTAINER
+========================= */
+.container {
   min-height: 100vh;
   width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  margin: 0;
+  padding: 0;
+  background:
+    linear-gradient(
+      110deg,
+      rgba(0,0,0,0.85) 35%,
+      rgba(0,0,0,0.55) 55%,
+      rgba(0,0,0,0.25) 100%
+    ),
+    url("/persib-stadium.jpg") center / cover no-repeat;
+  color: #ffffff;
+  position: relative;
+  font-family: var(--font-bebas), sans-serif;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+/* =========================
+   TITLE SECTION
+========================= */
+.titleSection {
+  padding-top: 80px;
+  text-align: center;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.titleSection h1 {
+  font-size: 72px;          /* JUDUL UTAMA */
+  letter-spacing: 4px;
+  line-height: 1.15;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0 0 32px 0;
 }
 
-.intro p {
-  max-width: 440px;
+/* =========================
+   LOGO
+========================= */
+.logo {
+  width: 150px;
+  margin-top: 24px;
+}
+
+/* =========================
+   HIGHLIGHT BOX
+========================= */
+.highlightBox {
+  margin: 60px auto 0;
+  width: 420px;
+  padding: 22px 0;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  text-align: center;
   font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+  font-weight: 400;
+  letter-spacing: 2px;
+  background: rgba(0,0,0,0.35);
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+/* =========================
+   TABLE WRAPPER
+========================= */
+.tableWrapper {
+  margin: 60px auto 0;
+  width: 80%;
+  overflow-x: auto;
 }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
+/* =========================
+   TABLE BASE
+========================= */
+.table {
   width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+  border-collapse: collapse;
+  background: rgba(0,0,0,0.4);
 }
 
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+.table thead {
+  background: rgba(255,255,255,0.1);
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.table th,
+.table td {
+  padding: 16px 18px;
+  text-align: left;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.table th {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+.table td {
+  font-size: 17px;
+  letter-spacing: 1px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ALIGNMENT */
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  text-align: right;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  text-align: center;
+}
+
+/* =========================
+   RANK TYPOGRAPHY HIERARCHY
+========================= */
+
+/* Default (Rank 3+) */
+.rankNormal .playerName,
+.rankNormal .metric {
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+/* Rank #2 */
+.rankSecond .playerName,
+.rankSecond .metric {
+  font-size: 32px;          /* ⬅️ REQUEST */
+  letter-spacing: 1.5px;
+}
+
+/* Rank #1 */
+.rankTop .playerName,
+.rankTop .metric {
+  font-size: 38px;          /* ⬅️ REQUEST */
+  letter-spacing: 2px;
+}
+
+/* Visual emphasis Rank #1 */
+.rankTop {
+  background: rgba(255,255,255,0.06);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  position: absolute;
+  bottom: 24px;
+  left: 32px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .titleSection h1 {
+    font-size: 36px;
+    letter-spacing: 2.5px;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-}
-
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
   .logo {
-    filter: invert();
+    width: 90px;
   }
 
-  .page {
-    --background: #000;
-    --foreground: #000;
+  .highlightBox {
+    width: 90%;
+    font-size: 16px;
+  }
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+  .tableWrapper {
+    width: 95%;
+  }
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  /* Rank scaling mobile */
+  .rankTop .playerName,
+  .rankTop .metric {
+    font-size: 24px;
+  }
+
+  .rankSecond .playerName,
+  .rankSecond .metric {
+    font-size: 20px;
+  }
+
+  .rankNormal .playerName,
+  .rankNormal .metric {
+    font-size: 15px;
+  }
+
+  .table th {
+    font-size: 15px;
+  }
+
+  .table td {
+    font-size: 14px;
   }
 }
