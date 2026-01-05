@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }) {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://benarkahmasukpersib.netlify.app" />
-        <meta property="og:image" content="https://benarkahmasukpersib.netlify.app/og-image.jpg" />
+        <meta property="og:image" content="https://benarkahmasukpersib.netlify.app/persib-outline-logo.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
